@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">NewEcomm</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/login">Log In</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container">
+    {{#if errors}}
+        {{#each errors}}
+            <div class="alert alert-danger">{{msg}}</div>
+        {{/each}}
+    {{/if}}
+    <form class="form-horizontal" role="form" method="post" action="/signup" data-toggle="validator">
+        <h2></h2>
+        </br>
+        </br>
+        <h3>Your Basic info</h3>
+        <div class="form-group">
+            <label for="Name" class="col-sm-2 control-label"> Name</label>
+            <div class="col-sm-5">
+                <input type="text" id="username" name="user_name" placeholder="Your Full Name" class="form-control" autofocus required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="userid" class="col-sm-2 control-label"> Username</label>
+            <div class="col-sm-5">
+                <input type="text" id="userid" name="user_id" placeholder="Username" class="form-control" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-5">
+                <input type="email" id="useremail" placeholder="Your Email" name="user_email" class="form-control" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="col-sm-2  control-label">Password</label>
+            <div class="form-inline row">
+                <div class="col-sm-2">
+                    <input type="password" minlength="8" class="form-control" name = "user_password" id="inputPassword" placeholder="Password" required>
+                    <div class="help-block">Minimum of 8 characters</div>
+                </div>
+                <div class="col-sm-2">
+                    <input type="password" class="form-control" id="inputPasswordConfirm" name = "user_confirmpassword" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-sm-2 col-sm-offset-2">
+                <input type="submit" class="btn btn-primary btn-block">
+            </div>
+        </div>
+    </form> <!-- /form -->
+</div> <!-- ./container -->
+<script src="/javascripts/jquery.js"></script>
+<script>
+    var password = document.getElementById("inputPassword")
+            , confirm_password = document.getElementById("inputPasswordConfirm");
+
+    function validatePassword(){
+        if(password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Passwords Don't Match");
+        } else {
+            confirm_password.setCustomValidity('');
+        }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+</script>
+
+</body>
+</html>

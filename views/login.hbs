@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">NewEcomm</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#login">Log In</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="/signup">Sign Up</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+<div class="container">
+    <form class="form-horizontal" role="form">
+        </br>
+        </br>
+        </br>
+        </br>
+        <h3>Log in</h3>
+        <div class="form-group">
+            <label for="userid" class="col-sm-2 control-label"> User Id:</label>
+            <div class="col-sm-5">
+                <input type="text" id="userid" name="user_id" placeholder="username or Email" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-2 control-label">Password:</label>
+            <div class="col-sm-5">
+                <input type="password" id="userpassword" placeholder="Password" name="user_password" class="form-control">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-sm-2 col-sm-offset-2">
+                <button type="submit" class="btn btn-primary btn-block">Log In</button>
+            </div>
+        </div>
+    </form>
+    </div>
+
+<script src="/javascripts/jquery.js"></script>
+<script src="javascripts/bootstrap.min.js"></script>
+</body>
+</html>
